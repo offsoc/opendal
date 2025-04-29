@@ -20,14 +20,8 @@ use std::fmt::Debug;
 use serde::Deserialize;
 use serde::Serialize;
 
-/// config for file system
+/// config for foyer config
 #[derive(Default, Debug, Serialize, Deserialize, Clone, PartialEq, Eq)]
 #[serde(default)]
 #[non_exhaustive]
-pub struct FsConfig {
-    /// root dir for backend
-    pub root: Option<String>,
-
-    /// tmp dir for atomic write
-    pub atomic_write_dir: Option<String>,
-}
+pub struct FoyerConfig {}

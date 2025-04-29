@@ -15,16 +15,19 @@
 // specific language governing permissions and limitations
 // under the License.
 
-use std::path::Path;
-use std::path::PathBuf;
-use std::sync::Arc;
-use uuid::Uuid;
+#[cfg(feature = "services-foyer")]
+mod core;
+#[cfg(feature = "services-foyer")]
+mod delete;
+#[cfg(feature = "services-foyer")]
+mod reader;
+#[cfg(feature = "services-foyer")]
+mod writer;
 
-use crate::raw::*;
-use crate::*;
+#[cfg(feature = "services-foyer")]
+mod backend;
+#[cfg(feature = "services-foyer")]
+pub use backend::FsBuilder as Fs;
 
-#[derive(Debug)]
-pub struct FsCore {
-    pub info: Arc<AccessorInfo>,
-    pub cache: foyer::HybridCache<String, Buffer>,
-}
+mod config;
+pub use config::FsConfig;

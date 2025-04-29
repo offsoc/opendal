@@ -139,6 +139,7 @@ services-dbfs = []
 services-dropbox = []
 services-etcd = ["dep:etcd-client", "dep:bb8"]
 services-foundationdb = ["dep:foundationdb"]
+services-foyer = ["dep:foyer"]
 services-fs = ["tokio/fs", "internal-tokio-rt"]
 services-ftp = [
   "dep:suppaftp",
@@ -333,6 +334,8 @@ redis = { version = "0.29", features = [
 rocksdb = { version = "0.21.0", default-features = false, optional = true }
 # for services-sled
 sled = { version = "0.34.7", optional = true }
+# for services-foyer
+foyer = { version = "0.16", optional = true }
 # for services-ftp
 futures-rustls = { version = "0.26.0", optional = true }
 rustls-native-certs = { version = "0.8", optional = true }

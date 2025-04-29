@@ -14,17 +14,3 @@
 // KIND, either express or implied.  See the License for the
 // specific language governing permissions and limitations
 // under the License.
-
-use std::path::Path;
-use std::path::PathBuf;
-use std::sync::Arc;
-use uuid::Uuid;
-
-use crate::raw::*;
-use crate::*;
-
-#[derive(Debug)]
-pub struct FsCore {
-    pub info: Arc<AccessorInfo>,
-    pub cache: foyer::HybridCache<String, Buffer>,
-}
